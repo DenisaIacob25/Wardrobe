@@ -11,7 +11,8 @@ namespace wardrobe.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class ClothingType
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,6 +22,7 @@ namespace wardrobe.Models
         }
     
         public int TypeID { get; set; }
+        [Display (Name = "Clothing Type")]
         public string ClothingType1 { get; set; }
         public string Size { get; set; }
         public string Brand { get; set; }

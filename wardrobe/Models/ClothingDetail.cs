@@ -11,15 +11,19 @@ namespace wardrobe.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class ClothingDetail
     {
         public int ClothingID { get; set; }
         public string Title { get; set; }
         public string Color { get; set; }
         public string Photo { get; set; }
+        [Display(Name ="Occassion")]
         public int OccassionID { get; set; }
+        [Display(Name = "Season")]
         public int SeasonID { get; set; }
+        [Display(Name = "Clothing Type")]
         public int TypeID { get; set; }
     
         public virtual ClothingType ClothingType { get; set; }

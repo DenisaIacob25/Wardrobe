@@ -5,8 +5,91 @@
 }
 
 <h2>Index</h2>
-
 <p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<div class="row">
+    @foreach (var item in Model)
+    {
+
+        @*Thumbnail reviews*@
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <div class="thumbnail">
+                <div class="caption">
+                    @*Image per review*@
+
+                    @*<div class="Photo">
+                        @if (item.Photo == "Nike Shoes")
+                {
+                            <div class="NikeImage">
+                                <img src="~/Images/nike.jpg" class="img-responsive" style="background-size: cover" />
+                            </div>
+                        }
+                        else if (item.Photo == "")
+                        {
+                            <div class="spainImage">
+                                <img src="~/Images/IMG_2066.JPG" class="img-responsive" style="background-size: cover" />
+                            </div>
+                        }
+
+                        else if (item.Photo == "")
+                        {
+                            <div class="franceImage">
+                                <img src="~/Images/FullSizeRender (1).jpg" class="img-responsive" style="background-size: cover" />
+                            </div>
+                        }
+                        else if (item.Photo == "")
+                        {
+                            <div class="croatiaImage">
+                                <img src="~/Images/IMG_2920.JPG" class="img-responsive" style="background-size: cover" />
+                            </div>
+                        }
+                        else if (item.Photo == "")
+                        {
+                            <div class="mexicoImage">
+                                <img src="~/Images/IMG_2922.JPG" class="img-responsive" style="background-size: cover" />
+                            </div>
+                        }
+                        else if (item.Photo == "")
+                        {
+                            <div class="turkeyImage">
+                                <img src="~/Images/IMG_2187.JPG" class="img-responsive" style="background-size: cover" />
+                            </div>
+                        }
+                        else if (item.Photo == "")
+                        {
+                            <div class="canadaImage">
+                                <img src="~/Images/IMG_9130.JPG" class="img-responsive" style="background-size: cover" />
+                            </div>
+                        }
+                        else if (item.Photo == "")
+                        {
+                            <div class="usaImage">
+                                <img src="~/Images/IMG_4845.JPG" class="img-responsive" style="background-size: cover" />
+                            </div>
+                        }
+                    </div>*@
+
+                    <h2><strong>@Html.DisplayFor(modelItem => item.Title)</strong></h2>
+                    <h3>@Html.DisplayNameFor(model => model.Color)</h3>
+                    <img src="@Url.Content(item.Photo)" class="img-responsive"/>
+                    @*<h4>@Html.DisplayNameFor(model => model.Photo)</h4>*@
+                    <p>@Html.DisplayNameFor(model => model.ClothingType.ClothingType1)</p>
+                    <h6>@Html.DisplayNameFor(model => model.Occassion.Occassions)</h6>
+                    <h6>@Html.DisplayFor(modelItem => item.Season.Seasons)</h6>
+                    <p><a href="https://www.google.com" class="btn btn-primary" role="button">Read More!</a></p>
+                    <ol class="breadcrumb">
+                        <li><a href="#"> @Html.ActionLink("Edit", "Edit", new { id = item.ClothingID }) </a></li>
+                        <li><a href="#"> @Html.ActionLink("Details", "Details", new { id = item.ClothingID })</a></li>
+                        <li class="active">@Html.ActionLink("Delete", "Delete", new { id = item.ClothingID })</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+@*<p>
     @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
@@ -21,13 +104,13 @@
             @Html.DisplayNameFor(model => model.Photo)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.OccassionID)
+            @Html.DisplayNameFor(model => model.ClothingType.ClothingType1)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.SeasonID)
+            @Html.DisplayNameFor(model => model.Occassion.Occassions)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.TypeID)
+            @Html.DisplayNameFor(model => model.Season.Seasons)
         </th>
         <th></th>
     </tr>
@@ -44,13 +127,13 @@
             @Html.DisplayFor(modelItem => item.Photo)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.OccassionID)
+            @Html.DisplayFor(modelItem => item.ClothingType.ClothingType1)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.SeasonID)
+            @Html.DisplayFor(modelItem => item.Occassion.Occassions)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.TypeID)
+            @Html.DisplayFor(modelItem => item.Season.Seasons)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ClothingID }) |
@@ -60,4 +143,4 @@
     </tr>
 }
 
-</table>
+</table>*@

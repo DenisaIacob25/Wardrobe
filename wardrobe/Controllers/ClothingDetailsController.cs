@@ -17,7 +17,8 @@ namespace wardrobe.Controllers
         // GET: ClothingDetails
         public ActionResult Index()
         {
-            return View(db.ClothingDetails.ToList());
+            var clothingDetails = db.ClothingDetails.Include(c => c.ClothingType).Include(c => c.Occassion).Include(c => c.Season);
+            return View(clothingDetails.ToList());
         }
 
         // GET: ClothingDetails/Details/5
@@ -38,6 +39,9 @@ namespace wardrobe.Controllers
         // GET: ClothingDetails/Create
         public ActionResult Create()
         {
+            ViewBag.TypeID = new SelectList(db.ClothingTypes, "TypeID", "ClothingType1");
+            ViewBag.OccassionID = new SelectList(db.Occassions, "OccassionsID", "Occassions");
+            ViewBag.SeasonID = new SelectList(db.Seasons, "SeasonsID", "Seasons");
             return View();
         }
 
@@ -55,6 +59,9 @@ namespace wardrobe.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.TypeID = new SelectList(db.ClothingTypes, "TypeID", "ClothingType1", clothingDetail.TypeID);
+            ViewBag.OccassionID = new SelectList(db.Occassions, "OccassionsID", "Occassions", clothingDetail.OccassionID);
+            ViewBag.SeasonID = new SelectList(db.Seasons, "SeasonsID", "Seasons", clothingDetail.SeasonID);
             return View(clothingDetail);
         }
 
@@ -70,6 +77,9 @@ namespace wardrobe.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.TypeID = new SelectList(db.ClothingTypes, "TypeID", "ClothingType1", clothingDetail.TypeID);
+            ViewBag.OccassionID = new SelectList(db.Occassions, "OccassionsID", "Occassions", clothingDetail.OccassionID);
+            ViewBag.SeasonID = new SelectList(db.Seasons, "SeasonsID", "Seasons", clothingDetail.SeasonID);
             return View(clothingDetail);
         }
 
@@ -86,6 +96,9 @@ namespace wardrobe.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.TypeID = new SelectList(db.ClothingTypes, "TypeID", "ClothingType1", clothingDetail.TypeID);
+            ViewBag.OccassionID = new SelectList(db.Occassions, "OccassionsID", "Occassions", clothingDetail.OccassionID);
+            ViewBag.SeasonID = new SelectList(db.Seasons, "SeasonsID", "Seasons", clothingDetail.SeasonID);
             return View(clothingDetail);
         }
 

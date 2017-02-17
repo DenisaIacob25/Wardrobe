@@ -218,6 +218,15 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>wardrobeModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <Content Include="Images\black dress.png" />
+    <Content Include="Images\coat.png" />
+    <Content Include="Images\flower necklace.jpg" />
+    <Content Include="Images\heels.jpg" />
+    <Content Include="Images\mens pants.jpg" />
+    <Content Include="Images\nike.jpg" />
+    <Content Include="Images\polo shirt1.jpg" />
+    <Content Include="Images\Scarf.jpg" />
+    <Content Include="Images\skirt.jpg" />
     <Content Include="Models\wardrobeModel.edmx.diagram">
       <DependentUpon>wardrobeModel.edmx</DependentUpon>
     </Content>

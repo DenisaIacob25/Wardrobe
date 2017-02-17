@@ -6,7 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="4bc48a4cf963402cb2af28a73469c261" Name="Diagram1">
         <EntityTypeShape EntityType="wardrobeModel.ClothingDetail" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="wardrobeModel.ClothingType" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="wardrobeModel.ClothingType" Width="1.5" PointX="2.875" PointY="0.625" IsExpanded="true" />
         <EntityTypeShape EntityType="wardrobeModel.Occassion" Width="1.5" PointX="7" PointY="0.875" IsExpanded="true" />
         <EntityTypeShape EntityType="wardrobeModel.Season" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="wardrobeModel.FK_ClothingDetails_ClothingType" />
