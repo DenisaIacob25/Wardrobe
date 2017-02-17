@@ -14,9 +14,18 @@ namespace wardrobe.Models
     
     public partial class ClothingType
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public ClothingType()
+        {
+            this.ClothingDetails = new HashSet<ClothingDetail>();
+        }
+    
         public int TypeID { get; set; }
         public string ClothingType1 { get; set; }
         public string Size { get; set; }
         public string Brand { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ClothingDetail> ClothingDetails { get; set; }
     }
 }

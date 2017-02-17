@@ -21,5 +21,9 @@ namespace wardrobe.Models
         public int OccassionID { get; set; }
         public int SeasonID { get; set; }
         public int TypeID { get; set; }
+    
+        public virtual ClothingType ClothingType { get; set; }
+        public virtual Occassion Occassion { get; set; }
+        public virtual Season Season { get; set; }
     }
 }

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="wardrobeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="wardrobeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ClothingDetails">
           <Key>
             <PropertyRef Name="ClothingID" />
@@ -40,14 +40,61 @@
           <Property Name="SeasonsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Seasons" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
+        <Association Name="FK_ClothingDetails_ClothingType">
+          <End Role="ClothingType" Type="Self.ClothingType" Multiplicity="1" />
+          <End Role="ClothingDetails" Type="Self.ClothingDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ClothingType">
+              <PropertyRef Name="TypeID" />
+            </Principal>
+            <Dependent Role="ClothingDetails">
+              <PropertyRef Name="TypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ClothingDetails_Occassions">
+          <End Role="Occassions" Type="Self.Occassions" Multiplicity="1" />
+          <End Role="ClothingDetails" Type="Self.ClothingDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Occassions">
+              <PropertyRef Name="OccassionsID" />
+            </Principal>
+            <Dependent Role="ClothingDetails">
+              <PropertyRef Name="OccassionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ClothingDetails_Seasons">
+          <End Role="Seasons" Type="Self.Seasons" Multiplicity="1" />
+          <End Role="ClothingDetails" Type="Self.ClothingDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Seasons">
+              <PropertyRef Name="SeasonsID" />
+            </Principal>
+            <Dependent Role="ClothingDetails">
+              <PropertyRef Name="SeasonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="wardrobeModelStoreContainer">
           <EntitySet Name="ClothingDetails" EntityType="Self.ClothingDetails" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ClothingType" EntityType="Self.ClothingType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Occassions" EntityType="Self.Occassions" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Seasons" EntityType="Self.Seasons" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_ClothingDetails_ClothingType" Association="Self.FK_ClothingDetails_ClothingType">
+            <End Role="ClothingType" EntitySet="ClothingType" />
+            <End Role="ClothingDetails" EntitySet="ClothingDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ClothingDetails_Occassions" Association="Self.FK_ClothingDetails_Occassions">
+            <End Role="Occassions" EntitySet="Occassions" />
+            <End Role="ClothingDetails" EntitySet="ClothingDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ClothingDetails_Seasons" Association="Self.FK_ClothingDetails_Seasons">
+            <End Role="Seasons" EntitySet="Seasons" />
+            <End Role="ClothingDetails" EntitySet="ClothingDetails" />
+          </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="wardrobeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -62,6 +109,9 @@
           <Property Name="OccassionID" Type="Int32" Nullable="false" />
           <Property Name="SeasonID" Type="Int32" Nullable="false" />
           <Property Name="TypeID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ClothingType" Relationship="wardrobeModel.FK_ClothingDetails_ClothingType" FromRole="ClothingDetail" ToRole="ClothingType" />
+          <NavigationProperty Name="Occassion" Relationship="wardrobeModel.FK_ClothingDetails_Occassions" FromRole="ClothingDetail" ToRole="Occassion" />
+          <NavigationProperty Name="Season" Relationship="wardrobeModel.FK_ClothingDetails_Seasons" FromRole="ClothingDetail" ToRole="Season" />
         </EntityType>
         <EntityType Name="ClothingType">
           <Key>
@@ -71,6 +121,7 @@
           <Property Name="ClothingType1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Size" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="Brand" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ClothingDetails" Relationship="wardrobeModel.FK_ClothingDetails_ClothingType" FromRole="ClothingType" ToRole="ClothingDetail" />
         </EntityType>
         <EntityType Name="Occassion">
           <Key>
@@ -78,6 +129,7 @@
           </Key>
           <Property Name="OccassionsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Occassions" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="ClothingDetails" Relationship="wardrobeModel.FK_ClothingDetails_Occassions" FromRole="Occassion" ToRole="ClothingDetail" />
         </EntityType>
         <EntityType Name="Season">
           <Key>
@@ -85,13 +137,62 @@
           </Key>
           <Property Name="SeasonsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Seasons" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="ClothingDetails" Relationship="wardrobeModel.FK_ClothingDetails_Seasons" FromRole="Season" ToRole="ClothingDetail" />
         </EntityType>
         <EntityContainer Name="wardrobeEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="ClothingDetails" EntityType="Self.ClothingDetail" />
           <EntitySet Name="ClothingTypes" EntityType="Self.ClothingType" />
           <EntitySet Name="Occassions" EntityType="Self.Occassion" />
           <EntitySet Name="Seasons" EntityType="Self.Season" />
+          <AssociationSet Name="FK_ClothingDetails_ClothingType" Association="wardrobeModel.FK_ClothingDetails_ClothingType">
+            <End Role="ClothingType" EntitySet="ClothingTypes" />
+            <End Role="ClothingDetail" EntitySet="ClothingDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ClothingDetails_Occassions" Association="wardrobeModel.FK_ClothingDetails_Occassions">
+            <End Role="Occassion" EntitySet="Occassions" />
+            <End Role="ClothingDetail" EntitySet="ClothingDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ClothingDetails_Seasons" Association="wardrobeModel.FK_ClothingDetails_Seasons">
+            <End Role="Season" EntitySet="Seasons" />
+            <End Role="ClothingDetail" EntitySet="ClothingDetails" />
+          </AssociationSet>
         </EntityContainer>
+        <Association Name="FK_ClothingDetails_ClothingType">
+          <End Type="wardrobeModel.ClothingType" Role="ClothingType" Multiplicity="1" />
+          <End Type="wardrobeModel.ClothingDetail" Role="ClothingDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ClothingType">
+              <PropertyRef Name="TypeID" />
+            </Principal>
+            <Dependent Role="ClothingDetail">
+              <PropertyRef Name="TypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ClothingDetails_Occassions">
+          <End Type="wardrobeModel.Occassion" Role="Occassion" Multiplicity="1" />
+          <End Type="wardrobeModel.ClothingDetail" Role="ClothingDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Occassion">
+              <PropertyRef Name="OccassionsID" />
+            </Principal>
+            <Dependent Role="ClothingDetail">
+              <PropertyRef Name="OccassionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ClothingDetails_Seasons">
+          <End Type="wardrobeModel.Season" Role="Season" Multiplicity="1" />
+          <End Type="wardrobeModel.ClothingDetail" Role="ClothingDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Season">
+              <PropertyRef Name="SeasonsID" />
+            </Principal>
+            <Dependent Role="ClothingDetail">
+              <PropertyRef Name="SeasonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->

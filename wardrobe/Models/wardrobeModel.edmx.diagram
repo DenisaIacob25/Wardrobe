@@ -9,6 +9,9 @@
         <EntityTypeShape EntityType="wardrobeModel.ClothingType" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="wardrobeModel.Occassion" Width="1.5" PointX="7" PointY="0.875" IsExpanded="true" />
         <EntityTypeShape EntityType="wardrobeModel.Season" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="wardrobeModel.FK_ClothingDetails_ClothingType" />
+        <AssociationConnector Association="wardrobeModel.FK_ClothingDetails_Occassions" />
+        <AssociationConnector Association="wardrobeModel.FK_ClothingDetails_Seasons" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

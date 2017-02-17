@@ -14,7 +14,16 @@ namespace wardrobe.Models
     
     public partial class Season
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Season()
+        {
+            this.ClothingDetails = new HashSet<ClothingDetail>();
+        }
+    
         public int SeasonsID { get; set; }
         public string Seasons { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ClothingDetail> ClothingDetails { get; set; }
     }
 }
