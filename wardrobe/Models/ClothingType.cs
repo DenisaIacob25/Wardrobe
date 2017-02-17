@@ -20,7 +20,8 @@ namespace wardrobe.Models
         {
             this.ClothingDetails = new HashSet<ClothingDetail>();
         }
-    
+        //fields for typeID db
+        [Display(Name = "Clothing Type")]
         public int TypeID { get; set; }
         [Display (Name = "Clothing Type")]
         public string ClothingType1 { get; set; }

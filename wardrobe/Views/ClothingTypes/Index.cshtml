@@ -4,22 +4,23 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Clothing Type Options</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New Type", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.ClothingType1)
         </th>
-        <th>
+        @*Commented out to go along with other views in table*@
+        @*<th>
             @Html.DisplayNameFor(model => model.Size)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Brand)
-        </th>
+        </th>*@
         <th></th>
     </tr>
 
@@ -28,16 +29,18 @@
         <td>
             @Html.DisplayFor(modelItem => item.ClothingType1)
         </td>
-        <td>
+        @*Commented out to go along with other views in table*@
+        @*<td>
             @Html.DisplayFor(modelItem => item.Size)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Brand)
-        </td>
+        </td>*@
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.TypeID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.TypeID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.TypeID })
+            @Html.ActionLink("Edit", "Edit", new { id=item.TypeID }) 
+            @*Will not include these options for users*@
+            @*@Html.ActionLink("Details", "Details", new { id=item.TypeID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.TypeID })*@
         </td>
     </tr>
 }

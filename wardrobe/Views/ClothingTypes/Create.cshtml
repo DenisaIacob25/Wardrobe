@@ -4,7 +4,7 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+<h2>Add New Type</h2>
 
 
 @using (Html.BeginForm()) 
@@ -12,7 +12,7 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>ClothingType</h4>
+        
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
@@ -22,8 +22,8 @@
                 @Html.ValidationMessageFor(model => model.ClothingType1, "", new { @class = "text-danger" })
             </div>
         </div>
-
-        <div class="form-group">
+        @*Commented these two fields out because I added them as null in database in the wrong spot so will not use them at all*@
+        @*<div class="form-group">
             @Html.LabelFor(model => model.Size, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Size, new { htmlAttributes = new { @class = "form-control" } })
@@ -37,7 +37,7 @@
                 @Html.EditorFor(model => model.Brand, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Brand, "", new { @class = "text-danger" })
             </div>
-        </div>
+        </div>*@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">

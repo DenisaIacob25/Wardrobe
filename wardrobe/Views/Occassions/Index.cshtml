@@ -4,10 +4,10 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Occassions</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Add New Occassion", "Create")
 </p>
 <table class="table">
     <tr>
@@ -22,10 +22,12 @@
         <td>
             @Html.DisplayFor(modelItem => item.Occassions)
         </td>
+
+        @*Commented these options out because I do not want to allow user to alter the Occasions only add more to the list*@
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.OccassionsID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.OccassionsID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.OccassionsID })
+            @Html.ActionLink("Edit", "Edit", new { id=item.OccassionsID })
+            @*@Html.ActionLink("Details", "Details", new { id=item.OccassionsID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.OccassionsID })*@
         </td>
     </tr>
 }

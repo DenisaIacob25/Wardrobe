@@ -11,7 +11,8 @@ namespace wardrobe.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Season
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,7 +20,8 @@ namespace wardrobe.Models
         {
             this.ClothingDetails = new HashSet<ClothingDetail>();
         }
-    
+        //fields for seasons db
+        [Display(Name = "Season")]
         public int SeasonsID { get; set; }
         public string Seasons { get; set; }
     

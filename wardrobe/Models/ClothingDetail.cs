@@ -15,6 +15,8 @@ namespace wardrobe.Models
 
     public partial class ClothingDetail
     {
+        //Main db with foreign keys included
+        [Display(Name = "Clothing Details")]
         public int ClothingID { get; set; }
         public string Title { get; set; }
         public string Color { get; set; }
@@ -25,7 +27,8 @@ namespace wardrobe.Models
         public int SeasonID { get; set; }
         [Display(Name = "Clothing Type")]
         public int TypeID { get; set; }
-    
+
+        //Foreign keys for the db
         public virtual ClothingType ClothingType { get; set; }
         public virtual Occassion Occassion { get; set; }
         public virtual Season Season { get; set; }

@@ -11,7 +11,8 @@ namespace wardrobe.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Occassion
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,7 +20,8 @@ namespace wardrobe.Models
         {
             this.ClothingDetails = new HashSet<ClothingDetail>();
         }
-    
+        //fields for Occasion db
+        [Display(Name = "Occassion")]
         public int OccassionsID { get; set; }
         public string Occassions { get; set; }
     

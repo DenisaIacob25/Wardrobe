@@ -4,9 +4,9 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Available Items</h2>
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Sell Old Stuff", "Create")
 </p>
 <div class="row">
     @foreach (var item in Model)
@@ -23,7 +23,7 @@
                     <p class="season">@Html.DisplayFor(modelItem => item.Season.Seasons)</p>
                     <p class="color">@Html.DisplayFor(modelItem => item.Color)</p>     
                     @*Added button specifically for details, removed edit and delete*@               
-                    @Html.ActionLink("Product Details", "Details", new { id = item.ClothingID }, new{ @class = "btn btn-primary" })
+                    @Html.ActionLink("More Info", "Details", new { id = item.ClothingID }, new{ @class = "btn btn-primary" })
                    
 
     @*<ol class="breadcrumb">
