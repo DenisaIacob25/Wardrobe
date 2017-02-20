@@ -9,6 +9,16 @@
     <p id="sellLink">
         @Html.ActionLink("Sell Old Stuff", "Create")
     </p>
+    <br />
+    @*Added buttons for types of clothing*@
+<div id="typeButtons">
+  <button type="button">  @Html.ActionLink("Tops", "Tops", "ClothingDetails")</button>&nbsp;
+    <button type="button"> @Html.ActionLink("Bottoms", "Bottoms", "ClothingDetails") </button>&nbsp;
+    <button type="button"> @Html.ActionLink("Shoes","Shoes","ClothingDetails")</button>&nbsp;
+    <button type="button"> @Html.ActionLink("Accessories", "Accessories", "ClothingDetails")</button>
+</div>
+    <br />
+    <br />
 </div>
 <div class="row">
     @foreach (var item in Model)

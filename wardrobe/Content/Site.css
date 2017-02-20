@@ -1,9 +1,9 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
-    background-color:darkslategrey;
+    background-color: darkslategrey;
     font-family: 'Arima Madurai', cursive;
-    color:#9d9d9d;
+    color: #9d9d9d;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -27,75 +27,94 @@ textarea {
 }
 /*Main img/heading/button*/
 img#wardrobe {
-    display:block;
+    display: block;
     margin: 0 auto;
-    height:850px;
+    height: 850px;
 }
-div.carousel-caption{
-    background:rgba(128, 128, 128, 0.5);
-    color:black;
-    width:900px;
+
+div.carousel-caption {
+    background: rgba(128, 128, 128, 0.5);
+    color: black;
+    width: 900px;
 }
-#tagline b, strong{
-    font-weight:bold !important;
-    font-size:70px !important;
+
+#tagline b, strong {
+    font-weight: bold !important;
+    font-size: 70px !important;
 }
-.btn-primary{
-      background-color:rgb(128, 128, 128);
-      border-color:white;       
+
+.btn-primary {
+    background-color: rgb(128, 128, 128);
+    border-color: white;
 }
-.btn-primary:hover{
-    background-color:#91C9D8;
-    border-color:white;
-        
-}
+
+    .btn-primary:hover {
+        background-color: #91C9D8;
+        border-color: white;
+    }
 /*NAVBAR*/
-.navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand{
-    color:deeppink;
+.navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
+    color: deeppink;
     font-family: 'Pacifico', cursive;
 }
-.navbar-inverse{
-    background-color:#16123c;
+
+.navbar-inverse {
+    background-color: #16123c;
 }
 
 /*Details Page Customization*/
-h2#detailsTitle{
-    color:white;
-    font-size:60px;
-    text-align:center;
+h2#detailsTitle {
+    color: white;
+    font-size: 60px;
+    text-align: center;
 }
-p#sellLink{
-    color:#16123c;
+
+p#sellLink {
+    color: #16123c;
     background-color: lightgrey;
     width: 300px;
     border: 5px solid;
-    text-align:center;
-    font-size:30px;
+    text-align: center;
+    font-size: 30px;
 }
-div.boxed{
+
+div.boxed {
     margin: 0 auto;
-    position:relative;
+    position: relative;
     left: 37%;
 }
-a:hover, a:focus{
-    color:white;
+
+a:hover, a:focus {
+    color: white;
 }
-a{
-        color:deeppink;
+
+a {
+    color: deeppink;
 }
-h2#detailsTitle{
-    color:deeppink;
-    font-size:80px;
+
+h2#detailsTitle {
+    color: deeppink;
+    font-size: 80px;
 }
+/*Buttons for clothing types*/
+div#typeButtons {
+    margin: 0 auto;
+    position: relative;
+    left: 1%;
+    font-size: 16px;
+}
+
 /*Thumbnail - center all contents*/
 div.thumbnail {
     text-align: center;
-    background-color:#DAD4D3;
+    background-color: #DAD4D3;
 }
-.thumbnail{
-    border:5px solid;
-    border-color:#16123c;
+
+.thumbnail {
+    border: 5px solid;
+    border-color: #16123c;
 }
-#title{
-    font-size:45px !important;
+
+#title {
+    font-size: 45px !important;
 }
