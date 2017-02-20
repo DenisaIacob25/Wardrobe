@@ -37,8 +37,8 @@ div.carousel-caption{
     width:900px;
 }
 #tagline b, strong{
-    font-weight:bold;
-    font-size:70px;
+    font-weight:bold !important;
+    font-size:70px !important;
 }
 .btn-primary{
       background-color:rgb(128, 128, 128);
@@ -96,6 +96,6 @@ div.thumbnail {
     border:5px solid;
     border-color:#16123c;
 }
-#tagline b, strong{
-    font-size:45px;
+#title{
+    font-size:45px !important;
 }
