@@ -4,10 +4,12 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Available Items</h2>
-<p>
+<h2 id="detailsTitle">Available Items</h2>
+<div class="boxed">
+    <p id="sellLink">
     @Html.ActionLink("Sell Old Stuff", "Create")
-</p>
+    </p>
+ </div>
 <div class="row">
     @foreach (var item in Model)
     {

@@ -1,6 +1,9 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-color:darkslategrey;
+    font-family: 'Arima Madurai', cursive;
+    color:#9d9d9d;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -21,4 +24,65 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+/*Main img/heading/button*/
+img#wardrobe {
+    display:block;
+    margin: 0 auto;
+    height:850px;
+}
+div.carousel-caption{
+    background:rgba(128, 128, 128, 0.5);
+    color:black;
+    width:900px;
+}
+#tagline b, strong{
+    font-weight:bold;
+    font-size:70px;
+}
+.btn-primary{
+      background-color:rgb(128, 128, 128);
+      border-color:white;       
+}
+.btn-primary:hover{
+    background-color:#91C9D8;
+    border-color:white;
+        
+}
+/*NAVBAR*/
+.navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand{
+    color:deeppink;
+    font-family: 'Pacifico', cursive;
+}
+.navbar-inverse{
+    background-color:#16123c;
+}
+
+/*Details Page Customization*/
+h2#detailsTitle{
+    color:white;
+    font-size:60px;
+    text-align:center;
+}
+p#sellLink{
+    color:aquamarine;
+    background-color: lightgrey;
+    width: 300px;
+    border: 5px solid;
+    text-align:center;
+    font-size:30px;
+}
+div.boxed{
+    margin: 0 auto;
+    position:relative;
+    left: 37%;
+}
+/*Thumbnail*/
+div.thumbnail {
+    text-align: center;
+    background-color:#DAD4D3;
+}
+.thumbnail{
+    border:5px solid;
+    border-color:aquamarine;
 }
