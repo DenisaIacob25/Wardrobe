@@ -1,0 +1,2 @@
+The following project is a database first web application. The purpose of this application is for the user to buy and sell gently used items. It is essentially a  resale site. 
+The database for the project is created using MS SQL, which is integrated into the MVC Applciation in Visual Studio. I have created 4 tables with controllers for each model. I used bootstrap, CSS and HTML to style the web app. 
