@@ -3,7 +3,7 @@
 @{
     ViewBag.Title = "Index";
 }
-
+@*added a box to the create link to make it seem like a button*@
 <h2 id="detailsTitle">Available Items</h2>
 <div class="boxed">
     <p id="sellLink">
@@ -17,7 +17,7 @@
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
             <div class="thumbnail">
                 <div class="caption">
-                    <h2 class="title"><strong>@Html.DisplayFor(modelItem => item.Title)</strong></h2>
+                    <h2 id="title"><strong>@Html.DisplayFor(modelItem => item.Title)</strong></h2>
                     @*Image thumbnail UrlHelper and rearranged fields*@
                     <img src="@Url.Content(item.Photo)" class="img-responsive" />
                     <p class="clothingType">@Html.DisplayFor(modelItem => item.ClothingType.ClothingType1)</p>

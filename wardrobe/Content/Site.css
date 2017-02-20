@@ -65,7 +65,7 @@ h2#detailsTitle{
     text-align:center;
 }
 p#sellLink{
-    color:aquamarine;
+    color:#16123c;
     background-color: lightgrey;
     width: 300px;
     border: 5px solid;
@@ -77,12 +77,25 @@ div.boxed{
     position:relative;
     left: 37%;
 }
-/*Thumbnail*/
+a:hover, a:focus{
+    color:white;
+}
+a{
+        color:deeppink;
+}
+h2#detailsTitle{
+    color:deeppink;
+    font-size:80px;
+}
+/*Thumbnail - center all contents*/
 div.thumbnail {
     text-align: center;
     background-color:#DAD4D3;
 }
 .thumbnail{
     border:5px solid;
-    border-color:aquamarine;
+    border-color:#16123c;
+}
+#tagline b, strong{
+    font-size:45px;
 }
