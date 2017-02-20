@@ -7,9 +7,9 @@
 <h2 id="detailsTitle">Available Items</h2>
 <div class="boxed">
     <p id="sellLink">
-    @Html.ActionLink("Sell Old Stuff", "Create")
+        @Html.ActionLink("Sell Old Stuff", "Create")
     </p>
- </div>
+</div>
 <div class="row">
     @foreach (var item in Model)
     {
@@ -23,16 +23,16 @@
                     <p class="clothingType">@Html.DisplayFor(modelItem => item.ClothingType.ClothingType1)</p>
                     <p class="occasssion"> @Html.DisplayFor(modelItem => item.Occassion.Occassions)</p>
                     <p class="season">@Html.DisplayFor(modelItem => item.Season.Seasons)</p>
-                    <p class="color">@Html.DisplayFor(modelItem => item.Color)</p>     
-                    @*Added button specifically for details, removed edit and delete*@               
-                    @Html.ActionLink("More Info", "Details", new { id = item.ClothingID }, new{ @class = "btn btn-primary" })
-                   
+                    <p class="color">@Html.DisplayFor(modelItem => item.Color)</p>
+                    @*Added button specifically for details, removed edit and delete*@
+                    @Html.ActionLink("More Info", "Details", new { id = item.ClothingID }, new { @class = "btn btn-primary" })
 
-    @*<ol class="breadcrumb">
-                        <li><a href="#"> @Html.ActionLink("Edit", "Edit", new { id = item.ClothingID }) </a></li>
-                        <li><a href="#"> @Html.ActionLink("Details", "Details", new { id = item.ClothingID })</a></li>
-                        <li class="active">@Html.ActionLink("Delete", "Delete", new { id = item.ClothingID })</li>
-                    </ol>*@
+
+                    @*<ol class="breadcrumb">
+                            <li><a href="#"> @Html.ActionLink("Edit", "Edit", new { id = item.ClothingID }) </a></li>
+                            <li><a href="#"> @Html.ActionLink("Details", "Details", new { id = item.ClothingID })</a></li>
+                            <li class="active">@Html.ActionLink("Delete", "Delete", new { id = item.ClothingID })</li>
+                        </ol>*@
                 </div>
             </div>
         </div>

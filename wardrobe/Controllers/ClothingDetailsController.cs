@@ -20,6 +20,43 @@ namespace wardrobe.Controllers
             var clothingDetails = db.ClothingDetails.Include(c => c.ClothingType).Include(c => c.Occassion).Include(c => c.Season);
             return View(clothingDetails.ToList());
         }
+        //Start of methods to call each view of clothing by type
+        // GET: Tops
+        public ActionResult Tops()
+        {
+            var clothingDetails = db.ClothingDetails.Include(c => c.ClothingType).Include(c => c.Occassion).Include(c => c.Season);
+            var query = from c in db.ClothingDetails
+                        where c.ClothingType.ClothingType1.Contains("Tops")
+                        select c;
+            return View(query);
+        }
+        // GET: Bottoms
+        public ActionResult Bottoms()
+        {
+            var clothingDetails = db.ClothingDetails.Include(c => c.ClothingType).Include(c => c.Occassion).Include(c => c.Season);
+            var query = from c in db.ClothingDetails
+                        where c.ClothingType.ClothingType1.Contains("Bottoms")
+                        select c;
+            return View(query);
+        } // GET: Shoes
+        public ActionResult Shoes()
+        {
+            var clothingDetails = db.ClothingDetails.Include(c => c.ClothingType).Include(c => c.Occassion).Include(c => c.Season);
+            var query = from c in db.ClothingDetails
+                        where c.ClothingType.ClothingType1.Contains("Shoes")
+                        select c;
+            return View(query);
+        }
+        // GET: Accessories
+        public ActionResult Accessories()
+        {
+            var clothingDetails = db.ClothingDetails.Include(c => c.ClothingType).Include(c => c.Occassion).Include(c => c.Season);
+            var query = from c in db.ClothingDetails
+                        where c.ClothingType.ClothingType1.Contains("Accessories")
+                        select c;
+            return View(query);
+        }
+        //end methods of added views for clothing types
 
         // GET: ClothingDetails/Details/5
         public ActionResult Details(int? id)

@@ -293,6 +293,10 @@
     <Content Include="Views\ClothingDetails\Details.cshtml" />
     <Content Include="Views\ClothingDetails\Edit.cshtml" />
     <Content Include="Views\ClothingDetails\Index.cshtml" />
+    <Content Include="Views\ClothingDetails\Tops.cshtml" />
+    <Content Include="Views\ClothingDetails\Bottoms.cshtml" />
+    <Content Include="Views\ClothingDetails\Shoes.cshtml" />
+    <Content Include="Views\ClothingDetails\Accessories.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
